@@ -22,9 +22,9 @@ function draw() {
   bullet.velocityX = speed;
   
  
-  fill("pink"); 
+  //fill("pink"); 
   textSize(19); 
-  text("Damage:"+Math.round(0.5*weight*speed*speed/thickness*thickness*thickness),1150,350);
+  //text("Damage:"+Math.round(0.5*weight*speed*speed/thickness*thickness*thickness),1150,350);
 
   fill("Green"); 
   textSize(19);
@@ -40,7 +40,7 @@ function draw() {
    
   if(hasCollided(bullet,wall)){
     bullet.velocityX=0;
-    //var damage=0.5*weight*speed*speed/(thickness*thickness*thickness);
+    var damage=0.5*weight*speed*speed/(thickness*thickness*thickness);
 
     if(damage>10){
       wall.shapeColor = color(255,0,0);
