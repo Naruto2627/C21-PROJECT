@@ -20,12 +20,11 @@ function draw() {
   text("y:"+mouseY,50,75);
 
   bullet.velocityX = speed;
-  
- 
-  //fill("pink"); 
-  textSize(19); 
-  //text("Damage:"+Math.round(0.5*weight*speed*speed/thickness*thickness*thickness),1150,350);
 
+  if(bullet.x>1202){
+    bullet.x = 0;
+  }
+  
   fill("Green"); 
   textSize(19);
   text("Damage <= 10 Then wall is effective against thee bullet",350,292);
@@ -33,14 +32,11 @@ function draw() {
   fill("Red"); 
   textSize(19);
   text("Damage >=10,The wall is not effective against the bullet",350,315);
-
-  if(bullet.isTouching(wall)){
-    bullet.velocityX = 0;
-  }
    
   if(hasCollided(bullet,wall)){
     bullet.velocityX=0;
     var damage=0.5*weight*speed*speed/(thickness*thickness*thickness);
+    text("Damage:"+Math.round(0.5*weight*speed*speed/(thickness*thickness*thickness)),1150,350);
 
     if(damage>10){
       wall.shapeColor = color(255,0,0);
