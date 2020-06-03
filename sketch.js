@@ -29,7 +29,8 @@ function draw() {
   textSize(19);
   text("Damage >=10,The wall is not effective against the bullet",350,315);
    
-  if(hasCollided(bullet,wall)){
+  if(wall.x-bullet.x<(bullet.width+wall.width)/2){
+
     bullet.velocityX=0;
     
     var damage=0.5*weight*speed*speed/(thickness*thickness*thickness);
@@ -50,14 +51,4 @@ function draw() {
   }
 
   drawSprites();
-}
-
-
-function hasCollided(bullet,wall){
-  bulletRightEdge=bullet.x + bullet.width;
-  wallLeftEdge=wall.x;
-  if(bulletRightEdge>=wallLeftEdge){
-    return true;
-  }
-  return false;
 }
