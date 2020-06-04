@@ -25,6 +25,11 @@ function draw() {
   textSize(19);
   text("Damage <= 10 Then wall is effective against thee bullet",350,292);
 
+  fill("Orange"); 
+  textSize(30);
+  text("Bullets and Wall",552,54);
+
+
   fill("Red"); 
   textSize(19);
   text("Damage >=10,The wall is not effective against the bullet",350,315);
